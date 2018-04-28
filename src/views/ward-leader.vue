@@ -168,6 +168,21 @@
                   detail="Social media"
                   label="Know a link?"></ask-detail>
               </dd>
+
+              <dt v-if="leader.campaignFinanceReports && leader.campaignFinanceReports.length > 0">
+                Campaign Finance Reports
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    v-for="report in leader.campaignFinanceReports"
+                    :key="report.title">
+                    <a :href="report.url">
+                      {{ report.year }}
+                    </a>
+                  </li>
+                </ul>
+              </dd>
             </dl>
 
           </div>
